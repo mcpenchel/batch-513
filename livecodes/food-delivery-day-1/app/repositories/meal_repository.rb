@@ -1,4 +1,3 @@
-require 'byebug'
 require 'csv'
 
 # require_relative é relativo ao arquivo onde executamos
@@ -7,7 +6,6 @@ require 'csv'
 require_relative '../models/meal'
 
 class MealRepository
-
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
 
@@ -35,12 +33,9 @@ class MealRepository
   end
 
   private
+
   def save_csv
-    csv_options = {
-      col_sep: ',',
-      quote_char: '"',
-      force_quotes: true
-    }
+    csv_options = { col_sep: ',', quote_char: '"', force_quotes: true }
 
     CSV.open(@csv_file_path, 'wb', csv_options) do |csv|
       csv << ['id', 'name', 'price']
@@ -53,10 +48,8 @@ class MealRepository
 
   def load_csv
     csv_options = {
-      col_sep: ',',
-      quote_char: '"',
-      headers: :first_row,
-      header_converters: :symbol
+      col_sep: ',', quote_char: '"',
+      headers: :first_row, header_converters: :symbol
     }
 
     CSV.foreach(@csv_file_path, csv_options) do |row|
@@ -66,7 +59,6 @@ class MealRepository
       @meals << Meal.new(row)
     end
   end
-
 end
 
 # repo = MealRepository.new('data/meals.csv')

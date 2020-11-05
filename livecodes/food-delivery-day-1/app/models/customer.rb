@@ -1,10 +1,10 @@
-class Meal
+class Customer
   attr_accessor :id
-  attr_reader :name, :price
+  attr_reader :name, :address
 
   def initialize(attributes = {})
     @id = attributes[:id]
     @name = attributes[:name]
-    @price = attributes[:price]
+    @address = attributes[:address]
   end
 end
