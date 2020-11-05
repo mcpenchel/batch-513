@@ -1,0 +1,5 @@
+id,name,age,disease,cured,room_id
+1,Ozzy,700,Everything's failing,false,1
+2,Lemmy,85,Kidney failure,false,1
+3,Vinicius,35,Headache,true,2
+4,Janis Joplin,66,Sore throat,false,2
